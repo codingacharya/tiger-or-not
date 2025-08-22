@@ -42,7 +42,7 @@ if uploaded_file is not None:
         score = predict_footprint(img)
 
         st.subheader("Prediction Result")
-        if score > 0.5:
+        if score > 0.96:   # ✅ threshold updated here
             st.success(f"✅ This looks like a **Tiger footprint** (confidence: {score:.2f})")
         else:
             st.error(f"❌ This is **NOT a tiger footprint** (confidence: {1-score:.2f})")
